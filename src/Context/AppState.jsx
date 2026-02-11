@@ -24,7 +24,6 @@ const AppState = (props) => {
   }, []);
   //fetching data
   useEffect(() => {
-    if (!token) return;
     const url = "https://mern-e-com-api.onrender.com/api";
 
     const fetchProducts = async () => {
@@ -32,7 +31,6 @@ const AppState = (props) => {
         headers: {
           "Content-Type": "Application/json",
         },
-        withCredentials: true,
       });
       // console.log(api.data.products);
       setProducts(api.data.products);
